@@ -1,0 +1,798 @@
+@font-face {
+    font-family: "Logo";
+    src: url('/Fonts/Instagram.ttf');
+}
+@font-face {
+    font-family: Roboto;
+    src: url(Fonts/Roboto-Regular.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+body, html {
+    height: 100%;
+    font-family: "Roboto";
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    /* width: 100%; */
+}
+.section {
+    height: 100%;
+    /* position: sticky; */
+
+}
+.section1 {
+    background-color: #212121;
+    width: 20%;
+    color: white;
+}
+.section2 {
+    background-color: #212121;
+    width: 50%;
+}
+.section3 {
+    background-color: #212121;
+    width: 30%;
+}
+
+/* Side bar Items starts here */
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: #212121; 
+    /* display: flex;
+    flex-direction: column;   */
+}
+.top {
+    width: 100%;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* background-color: red; */
+
+}
+.horizontal-hr2 {
+    display: none;
+    border: .5px solid rgb(168, 163, 163);
+    width: 100%;
+    margin-top: 1rem;
+}
+/* Logo portion */
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 3rem;
+    padding-inline: 2rem;
+
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+}
+.logo-word {
+    font-family: "Logo";
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+.logo-word:hover {
+    cursor: pointer;
+}
+
+.logo-icon{
+    position: relative;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+    display: none;
+}
+.logo-icon img{
+    color: white;
+    position: absolute;
+    /* border-radius: 50%; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo-icon img:hover {
+    cursor: pointer;
+}
+.logo-search {
+    position: relative;
+}
+.logo-search .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+.logo-search input::placeholder {
+    color: #aaa;
+}
+.logo-search input {
+    height: 2rem;
+    /* width: 20rem; */
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+}
+.left-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+/* Menubar portion */
+
+.sidebar-items {
+
+    display: flex;
+    flex-direction: column;
+    font-size: .8rem;
+
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+.sidebar-item {
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 2.5rem;
+    color: white;
+}
+.sidebar-item i{
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    /* font-size: .8rem; */
+}
+.sidebar-item a img {
+    height: 1rem;
+    width: 1rem;
+}
+
+.instagram-icon {
+    position: relative;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+}
+.instagram-icon img{
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* background-color: white; */
+    /* color: white; */
+    /* stroke: white; */
+}
+.bottom-items {
+    padding-top: 4rem;
+}
+.sidebar-item:hover{
+    background-color: #4c4c4c;
+    border-radius: .5rem;
+}
+
+.profile{
+    position: relative;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+}
+.profile img{
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Side bar Items ends here */
+
+.vertical-hr {
+    width: 1px;            
+    height: 100px;         
+    background-color: white; 
+    border: none;
+    /* margin: 0 10px; */
+}
+
+/* Story section starts here */
+
+.story-section {
+    display: flex;
+    overflow-x: auto; 
+    padding: 10px;
+    white-space: nowrap;
+    gap: 10px; 
+    height: 20%;
+    justify-content: flex-start;    
+    background-color: #212121;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    padding-top: 1rem;
+}
+.story-section::-webkit-scrollbar {
+    height: 8px; 
+}
+
+.story-section::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.story-section::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.story {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid #f09433; 
+    /* background-image: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); */
+    background-color: white;
+    padding: 2px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.story img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white; 
+}
+.story img:hover {
+    cursor: pointer;
+}
+.story span {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+.story span:hover {
+    cursor: pointer;
+}
+.story span {
+    color: white;
+}
+
+/* Story section ends here */
+
+
+/* Post section starts here */
+
+.post-section {
+    /* background-color: #212   121; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 10rem;
+    padding-top: 1rem;
+    padding-inline: 3rem;
+    height: 80%;
+    width: 100%;
+
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    gap: 3rem;
+
+    /* background-color: red; */
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    /* padding: 2rem; */
+}
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+.post-profile{
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+}
+.post-profile img{
+    position: absolute;
+    border: 2px solid #f09433;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.post-profile img:hover {
+    cursor: pointer;
+}
+.id {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* gap: 1rem; */
+}
+.id1 {
+    display: flex;
+    gap: .3rem;
+}
+.name-section .name {
+    color: white;
+    font-size: .8rem;
+}
+.name-section .name {
+    cursor: pointer;
+}
+.verified {
+    position: relative;
+    height: 1rem;
+    width: 1rem;
+    /* margin-right: 1rem; */
+}
+.verified img {
+    position: absolute;
+    /* border: 2px solid red; */
+    /* border-radius: 50%; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.name-section .location {
+    color: gray;
+    /* padding-top: .2rem; */
+    font-size: .6rem;
+    /* text-align: center; */
+}
+.name-section .location:hover {
+    cursor: pointer;
+}
+.name-section .time {
+    color: gray;
+    font-size: .6rem;
+}
+.name-section .time:hover {
+    cursor: pointer;
+}
+.more-button svg:hover {
+    cursor: pointer;
+}
+.instagram-post img{
+    padding-top: .5rem;  
+    height: 25rem;
+    width: 25rem;
+    object-fit: cover;
+    
+}
+.button-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-button {
+    display: flex;
+    gap: .5rem;
+}
+.like-button svg:hover {
+    cursor: pointer;
+}
+.comment-button svg:hover {
+    cursor: pointer;
+}
+.share-button svg:hover {
+    cursor: pointer;
+}
+.save-button svg:hover {
+    cursor: pointer;
+}
+.under-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+.under-section .likes {
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+}
+.under-section .likes:hover {
+    cursor: pointer;
+}
+.caption-head {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: .5rem;
+}
+.caption-head .name {
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+}
+.caption-head .name:hover {
+    cursor: pointer;
+}
+.caption-head .caption {
+    color: white;
+    font-size: .8rem;
+}
+.comment-box input {
+    background-color: #212121;
+    color: white;
+    border: none;
+    width: 100%;
+}
+input[type="text"]:focus {
+    outline: none;
+    border: none;
+    /* box-shadow: none; */
+}
+.horizontal-hr {
+    border: .5px solid rgb(168, 163, 163);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Bottom navbar starts here */
+.bottom-navbar {
+    display: none;
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-navbar a {
+    color: white;
+    padding-inline: 5px ;
+    
+    text-decoration: none;
+    display: inline-block;
+}
+
+.bottom-navbar a:hover {
+    background-color: #575757;
+    color: white;
+}
+/* Bottom navbar starts here */
+
+/* Post section ends here */
+
+
+/* Section 3 starts here */
+
+
+.top-section {
+    padding-left: 3rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #212121; */
+}
+.account-profile {
+    display: flex;
+}
+.profile-img{
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+}
+.profile-img img{
+    position: absolute;
+    border: 2px solid #f09433;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-img img:hover {
+    cursor: pointer;
+}
+.account {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.account .account-id {
+    color: white;
+    font-size: .8rem;
+}
+.account .account-id:hover {
+    cursor: pointer;
+}
+.account .account-name {
+    font-size: .8rem;
+    color: gray;
+}
+.switch a {
+    text-decoration: none;
+    font-size: .8rem;
+    color: blue;
+}
+.switch a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+
+
+.bottom-section {
+    padding-left: 3rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2.5rem;
+    /* background-color: #212121; */
+}
+.head {
+    display: flex;
+}
+.suggestion .suggestion-section {
+    color: gray;
+    font-size: .8rem;
+}
+.all {
+    font-size: .7rem;
+    color: white;
+}
+.all:hover {
+    cursor: pointer;
+    color: rgb(97, 93, 93);
+}
+
+
+
+
+.follow-section {
+    padding-left: 3rem;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #212121; */
+}
+.account-profile {
+    display: flex;
+}
+.profile-img{
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+}
+.profile-img img{
+    position: absolute;
+    border: 2px solid #f09433;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.follow {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.follow .account-id {
+    color: white;
+    font-size: .8rem;
+}
+.follow .account-id:hover {
+    cursor: pointer;
+}
+.follow .follow-suggestion {
+    font-size: .5rem;
+    color: gray;
+}
+.switch a {
+    text-decoration: none;
+    font-size: .67rem;
+    color: blue;
+}
+
+
+/* footer section starts here */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    /* white-space: pre-line; */
+    padding-top: 1rem;
+    padding-left: 5rem;
+    /* gap: 1rem; */
+}
+.footer-top {}
+.footer-bottom {}
+.footer a {
+    font-size: .5rem;
+    text-decoration: none;
+    color: gray;
+}
+.footer a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.dot {
+    font-size: 2px;
+    color: gray;
+    font-weight: bold;
+}
+.credit {
+    color: gray;
+    font-size: .6rem;
+    padding-top: 1rem;
+}
+
+/* footer section starts here */
+
+
+
+
+/* Section 3 ends here */
+
+
+
+
+
+/* Responsive */
+
+@media (max-width: 2000px) {
+    .logo-search {
+        display: none;
+    }
+    .notification-icon {
+        display: none;
+    }
+}
+
+@media  (max-width: 1200px) {
+    .section1{
+        width: 8%;
+        /* width: 4rem; */   
+        /* overflow-x: hidden; */
+    }
+    .section2 {
+        width: 50%;
+    }
+    .section3 {
+        width: 42%;
+    }
+    .sidebar-items span {
+        display: none;
+    }
+    .logo-search {
+        display: none;
+    }
+    .logo-word {
+        display: none;
+    }
+    .logo-icon {
+        display: block;
+    }
+    
+}
+
+@media  (max-width: 1150px) {
+    .section3 {
+        display: none;
+    }
+    .sectio1 {
+        width: 8%;
+    }
+    .section2 {
+        width: 92%;
+    }
+    .story-section {
+        margin-inline: 10rem;
+    }
+}
+
+@media  (max-width: 860px) {
+    .sidebar-items {
+        display: none;
+    }
+    .logo-search {
+        display: block;
+    }
+    .notification-icon {
+        display: block;
+    }
+    .section2 {
+        width: 100%;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #212121;
+    }
+    .section1 {
+        width: 100%;
+    }
+    .logo-icon img {
+        display: none;
+    }
+    .logo-word {
+        display: block;
+    }
+    .horizontal-hr2 {
+        display: block;
+        border: .1px solid rgb(168, 163, 163);
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .story-section {
+        margin-inline: 1rem;
+    }
+
+    .bottom-navbar {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
